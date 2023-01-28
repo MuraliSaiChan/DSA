@@ -1,9 +1,8 @@
 
 def recursive(n):
-    if n == 0:
-        return
+    if n == 1:
+        return n
     else:
-        print(n)
-        return recursive(n-1)
+        return n*recursive(n-1)
 
-recursive(10)
+print(recursive(10))
