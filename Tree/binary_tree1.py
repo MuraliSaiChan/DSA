@@ -52,6 +52,50 @@ class Tree:
                 if root.right is not None:
                     q.enqueue(root.right)
 
+    def search(self,root,value):
+        if root is None:
+            print("No Tree Found")
+        else:
+            q = Queue()
+            q.enqueue(root)
+            while not q.empty():
+                root = q.dequeue()
+                if root.value == value:
+                    print("Found")
+                    return
+                if root.left is not None:
+                    q.enqueue(root.left)
+                if root.right is not None:
+                    q.enqueue(root.right)
+        print("Not found")
+        return
+
+
+    def insert(self,root,value):
+        if root is None:
+            print("No Tree Found")
+        else:
+            d = self.deepnode(root)
+            q = Queue()
+            q.enqueue(root)
+            while not q.empty():
+                root = q.dequeue()
+                if root.value == value:
+
+                    return
+                if root.left is not None:
+                    q.enqueue(root.left)
+                if root.right is not None:
+                    q.enqueue(root.right)
+
+    def deleteTree(self,root):
+        if root is None:
+            print("No Tree")
+        else:
+            root.value = None
+            root.left = None
+            root.right = None
+
 
 
 
@@ -74,6 +118,8 @@ c.left = f
 c.right = g
 
 t = Tree()
+
+t.deleteTree(a)
 t.levelorder(a)
 
 
