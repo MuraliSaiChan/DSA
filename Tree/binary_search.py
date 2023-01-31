@@ -64,6 +64,11 @@ class Tree(binary_tree1.Tree):
         else:
             root.right = self.deletenode(root.right, value)
 
+    def delete(self,root):
+        root.value = None
+        root.left = None
+        root.right = None
+
 
 
 a = Node(70)
@@ -89,6 +94,9 @@ print(tree.levelorder(a))
 
 tree.deletenode(a,90)
 
+print(tree.levelorder(a))
+
+print(tree.delete(a))
 print(tree.levelorder(a))
 
 

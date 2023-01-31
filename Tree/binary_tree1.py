@@ -40,7 +40,7 @@ class Tree:
 
     def levelorder(self,root):
         if root is None:
-            return
+            print("No node found")
         else:
             q = Queue()
             q.enqueue(root)
